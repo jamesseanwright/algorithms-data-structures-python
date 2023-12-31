@@ -10,7 +10,7 @@ def is_balanced(input: str) -> bool:
         elif symbol == ")":
             if s.is_empty():
                 return False
-            else:
-                s.pop()
+
+            s.pop()
 
     return s.is_empty()
