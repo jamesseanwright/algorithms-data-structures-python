@@ -1,11 +1,12 @@
 import unittest
 from a_basic_data_structures.stack import Stack
 
+
 class TestStack(unittest.TestCase):
-    def testWithBookExample(self):
+    def test_with_book_example(self):
         s = Stack()
 
-        self.assertTrue(s.isEmpty())
+        self.assertTrue(s.is_empty())
 
         s.push(4)
         s.push("dog")
@@ -15,7 +16,7 @@ class TestStack(unittest.TestCase):
         s.push(True)
 
         self.assertEqual(s.size(), 3)
-        self.assertFalse(s.isEmpty())
+        self.assertFalse(s.is_empty())
 
         s.push(8.4)
 

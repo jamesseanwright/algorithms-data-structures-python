@@ -1,18 +1,18 @@
 class Stack:
     def __init__(self):
-        return None
+        self.items = []
 
-    def isEmpty(self):
-        return NotImplementedError()
+    def is_empty(self) -> bool:
+        return self.size() == 0
 
-    def push(self, item):
-        return NotImplementedError()
+    def push(self, item) -> None:
+        self.items.append(item)
 
-    def pop(self):
-        return NotImplementedError()
+    def pop(self) -> any:
+        return self.items.pop()
 
-    def peek(self):
-        return NotImplementedError()
+    def peek(self) -> any:
+        return self.items[-1]
 
-    def size(self):
-        return NotImplementedError()
+    def size(self) -> int:
+        return len(self.items)
