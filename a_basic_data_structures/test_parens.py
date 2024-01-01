@@ -12,3 +12,14 @@ class TestParens(unittest.TestCase):
         self.assertFalse(is_balanced("((((((())"))
         self.assertFalse(is_balanced("()))"))
         self.assertFalse(is_balanced("(()()(()"))
+
+    def test_is_balanced_returns_true_when_additional_symbols_are_balanced(self):
+        self.assertTrue(is_balanced("{ { ( [ ] [ ] ) } ( ) }"))
+        self.assertTrue(is_balanced("[ [ { { ( ( ) ) } } ] ]"))
+        self.assertTrue(is_balanced("[ ] [ ] [ ] ( ) { }"))
+
+    def test_is_balanced_returns_false_when_additional_symbols_are_not_balanced(self):
+        self.assertFalse(is_balanced("( [ ) ]"))
+        self.assertFalse(is_balanced("( ( ( ) ] ) )"))
+        self.assertFalse(is_balanced("[ { ( ) ]"))
+
