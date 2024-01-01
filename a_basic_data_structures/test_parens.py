@@ -22,4 +22,3 @@ class TestParens(unittest.TestCase):
         self.assertFalse(is_balanced("( [ ) ]"))
         self.assertFalse(is_balanced("( ( ( ) ] ) )"))
         self.assertFalse(is_balanced("[ { ( ) ]"))
-
