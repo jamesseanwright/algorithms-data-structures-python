@@ -8,3 +8,8 @@ class TestBaseN(unittest.TestCase):
         self.assertEqual(unsigned_dec_to_base_n(186), "10111010")
         self.assertEqual(unsigned_dec_to_base_n(255), "11111111")
         self.assertEqual(unsigned_dec_to_base_n(5), "101")
+
+    def test_unsigned_dec_to_base_n_returns_octal_when_base_8_provided(self):
+        self.assertEqual(unsigned_dec_to_base_n(2024, 8), "3750")
+        self.assertEqual(unsigned_dec_to_base_n(8, 8), "10")
+        self.assertEqual(unsigned_dec_to_base_n(511, 8), "777")
