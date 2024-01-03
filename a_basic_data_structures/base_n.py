@@ -1,2 +1,16 @@
+from a_basic_data_structures.stack import Stack
+
+
 def dec_to_base_n(decimal: int, base: int = 2) -> str:
-    raise NotImplementedError()
+    s = Stack()
+    x = decimal
+    out = ""
+
+    while x > 0:
+        s.push(x % base)
+        x //= base
+
+    while not s.is_empty():
+        out += str(s.pop())
+
+    return out
