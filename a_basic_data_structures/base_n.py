@@ -1,7 +1,7 @@
 from a_basic_data_structures.stack import Stack
 
 
-def dec_to_base_n(decimal: int, base: int = 2) -> str:
+def unsigned_dec_to_base_n(decimal: int, base: int = 2) -> str:
     s = Stack()
     x = decimal
     out = ""
