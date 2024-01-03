@@ -13,3 +13,8 @@ class TestBaseN(unittest.TestCase):
         self.assertEqual(unsigned_dec_to_base_n(2024, 8), "3750")
         self.assertEqual(unsigned_dec_to_base_n(8, 8), "10")
         self.assertEqual(unsigned_dec_to_base_n(511, 8), "777")
+
+    def test_unsigned_dec_to_base_n_returns_hex_when_base_16_provided(self):
+        self.assertEqual(unsigned_dec_to_base_n(15, 16), "F")
+        self.assertEqual(unsigned_dec_to_base_n(8000, 16), "1F40")
+        self.assertEqual(unsigned_dec_to_base_n(11259375, 16), "ABCDEF")
