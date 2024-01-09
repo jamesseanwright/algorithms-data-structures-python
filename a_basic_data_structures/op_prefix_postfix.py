@@ -5,32 +5,31 @@ operators = "-+*/"
 
 def to_postfix(expr: str) -> str:
     ops = Stack()
-    out = ""
+    out = []
 
-    for char in expr:
+    for char in expr.split(" "):
         if char == "(":
             ops.push(char)
 
         elif char == ")":
             while ops.peek() != "(":
-                out += ops.pop()
+                out.append(ops.pop())
 
-            out += ops.pop()  # TODO: dedupe statement
+            ops.pop()  # drop paren
 
         elif char in operators:
-            while (
-                not ops.is_empty()
-                and ops.peek() in operators
-                and operators.index(ops.peek()) >= operators.index(char)
-            ):
-                out += ops.pop()
+            while not ops.is_empty():
+                if ops.peek() in operators and operators.index(ops.peek()) < operators.index(char):
+                    break
+
+                out.append(ops.pop())
 
             ops.push(char)
 
         else:
-            out += char
+            out.append(char)
 
     while not ops.is_empty():
-        out += ops.pop()
+        out.append(ops.pop())
 
-    return out
+    return " ".join(out)
