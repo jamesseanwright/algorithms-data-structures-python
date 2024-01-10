@@ -15,11 +15,13 @@ def to_postfix(expr: str) -> str:
             while not ops.is_empty() and ops.peek() != "(":
                 out.append(ops.pop())
 
-            ops.pop() # drop opening paren
+            ops.pop()  # drop opening paren
 
         elif char in operators:
             while not ops.is_empty() and ops.peek() != "(":
-                if ops.peek() in operators and operators.index(ops.peek()) < operators.index(char):
+                if ops.peek() in operators and operators.index(
+                    ops.peek()
+                ) < operators.index(char):
                     break
 
                 out.append(ops.pop())
