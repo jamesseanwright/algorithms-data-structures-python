@@ -12,18 +12,17 @@ def to_postfix(expr: str) -> str:
             ops.push(char)
 
         elif char == ")":
-            while not ops.is_empty():
+            while not ops.is_empty() and ops.peek() != "(":
                 out.append(ops.pop())
 
+            ops.pop() # drop opening paren
+
         elif char in operators:
-            while not ops.is_empty():
+            while not ops.is_empty() and ops.peek() != "(":
                 if ops.peek() in operators and operators.index(ops.peek()) < operators.index(char):
                     break
 
-                next = ops.pop()
-
-                if next != "(":
-                    out.append(next)
+                out.append(ops.pop())
 
             ops.push(char)
 
