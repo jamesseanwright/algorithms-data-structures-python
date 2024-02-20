@@ -1,4 +1,4 @@
-from a_basic_data_structures.stack import Stack
+from a_basic_data_structures.stack.stack import Stack
 
 symbol_bindings = {"(": ")", "[": "]", "{": "}"}
 rev_symbol_bindings = {symbol_bindings[k]: k for k in symbol_bindings}

@@ -1,5 +1,5 @@
 import unittest
-from a_basic_data_structures.stack import Stack
+from a_basic_data_structures.stack.stack import Stack
 
 
 class TestStack(unittest.TestCase):

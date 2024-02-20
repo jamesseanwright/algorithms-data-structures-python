@@ -1,5 +1,5 @@
 import unittest
-from a_basic_data_structures.parens import is_balanced
+from a_basic_data_structures.stack.parens import is_balanced
 
 
 class TestParens(unittest.TestCase):

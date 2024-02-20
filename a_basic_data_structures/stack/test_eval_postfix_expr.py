@@ -1,5 +1,5 @@
 import unittest
-from a_basic_data_structures.eval_postfix_expr import eval_postfix_expr
+from a_basic_data_structures.stack.eval_postfix_expr import eval_postfix_expr
 
 
 class TestEvalPostfixExpr(unittest.TestCase):

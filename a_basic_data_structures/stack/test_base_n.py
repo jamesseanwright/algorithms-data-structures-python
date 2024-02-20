@@ -1,6 +1,6 @@
 import unittest
 
-from a_basic_data_structures.base_n import unsigned_dec_to_base_n
+from a_basic_data_structures.stack.base_n import unsigned_dec_to_base_n
 
 
 class TestBaseN(unittest.TestCase):

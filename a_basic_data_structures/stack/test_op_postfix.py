@@ -1,5 +1,5 @@
 import unittest
-from a_basic_data_structures.op_postfix import to_postfix
+from a_basic_data_structures.stack.op_postfix import to_postfix
 
 
 class TestToPostfix(unittest.TestCase):
