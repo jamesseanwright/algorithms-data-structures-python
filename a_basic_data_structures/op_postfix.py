@@ -7,29 +7,29 @@ def to_postfix(expr: str) -> str:
     ops = Stack()
     out = []
 
-    for char in expr:
-        if char == "(":
-            ops.push(char)
+    for token in expr:
+        if token == "(":
+            ops.push(token)
 
-        elif char == ")":
+        elif token == ")":
             while not ops.is_empty() and ops.peek() != "(":
                 out.append(ops.pop())
 
             ops.pop()  # drop opening paren
 
-        elif char in operators:
+        elif token in operators:
             while not ops.is_empty() and ops.peek() != "(":
                 if ops.peek() in operators and operators.index(
                     ops.peek()
-                ) < operators.index(char):
+                ) < operators.index(token):
                     break
 
                 out.append(ops.pop())
 
-            ops.push(char)
+            ops.push(token)
 
-        elif char != " ":
-            out.append(char)
+        elif token != " ":
+            out.append(token)
 
     while not ops.is_empty():
         out.append(ops.pop())
